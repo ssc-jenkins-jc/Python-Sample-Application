@@ -9,9 +9,9 @@ timestamps {
         }
         stage('Security check by Aqua') {
             withCredentials([
+        	string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN'),
                 string(credentialsId: 'AQUA_KEY', variable: 'AQUA_KEY'), 
                 string(credentialsId: 'AQUA_SECRET', variable: 'AQUA_SECRET')
-        string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN')
             ]) {
                 sh '''
                     export TRIVY_RUN_AS_PLUGIN=aqua
