@@ -9,8 +9,8 @@ timestamps {
         }
         stage('Code Repository Scanned by Aqua') {
             withCredentials([
-                string(credentialsId: 'AQUA_KEY2', variable: 'AQUA_KEY2'), 
-                string(credentialsId: 'AQUA_SECRET2', variable: 'AQUA_SECRET2'),
+                string(credentialsId: 'AQUA_KEY2', variable: 'AQUA_KEY'), 
+                string(credentialsId: 'AQUA_SECRET2', variable: 'AQUA_SECRET'),
                 string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN')
             ]) {
                 sh '''
@@ -47,8 +47,8 @@ timestamps {
             withCredentials([
                 // Replace GITLAB_CREDENTIALS_ID with the id of your gitlab credentials
                 string(credentialsId: 'GITHUB_TOKEN', variable: 'GITHUB_TOKEN'), 
-                string(credentialsId: 'AQUA_KEY2', variable: 'AQUA_KEY2'), 
-                string(credentialsId: 'AQUA_SECRET2', variable: 'AQUA_SECRET2')
+                string(credentialsId: 'AQUA_KEY2', variable: 'AQUA_KEY'), 
+                string(credentialsId: 'AQUA_SECRET2', variable: 'AQUA_SECRET')
             ]) {
                 // Replace ARTIFACT_PATH with the path to the root folder of your project 
                 // or with the name:tag the newly built image
